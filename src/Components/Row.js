@@ -24,17 +24,14 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     width: "100%",
   };
 
-  console.log(trailerUrl);
   const handleClick = (movie) => {
     if (trailerUrl) {
       setTrailerUrl("");
     } else {
-      console.log(movie);
       movieTrailer(movie?.original_name || movie?.name || movie?.title || "")
         .then((url) => {
-          console.log(url);
           const urlParams = new URLSearchParams(new URL(url).search);
-          console.log(urlParams.get("v"));
+
           setTrailerUrl(urlParams.get("v"));
         })
         .catch((error) => console.error(error));
