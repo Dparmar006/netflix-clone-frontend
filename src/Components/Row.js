@@ -20,7 +20,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
   }, [fetchUrl]);
 
   const options = {
-    height: "420",
+    height: "400",
     width: "100%",
   };
 
@@ -60,7 +60,9 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         </div>
       </div>
 
-      {trailerUrl && <YouTube videoId={trailerUrl} opts={options} />}
+      <div className="row__trailer">
+        {trailerUrl && <YouTube videoId={trailerUrl} opts={options} />}
+      </div>
     </div>
   );
 };
