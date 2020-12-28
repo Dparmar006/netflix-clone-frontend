@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Banner.css";
-import axios from "../axios";
-import requests from "../requests";
+import axios from "./axios";
+import requests from "./requests";
 
 const Banner = () => {
   const [movie, setMovie] = useState([]);
@@ -41,6 +41,7 @@ const Banner = () => {
         </div>
         <div className="banner__description">
           {truncate(movie?.overview || "", 150)}
+          <i>( click on poster to watch trailer )</i>
         </div>
       </div>
       <div className="banner__fadeeffect"></div>
