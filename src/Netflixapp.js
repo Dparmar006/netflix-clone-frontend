@@ -4,9 +4,10 @@ import Navbar from "./netflix/Components/Navbar";
 import Row from "./netflix/Components/Row";
 
 import requests from "./netflix/Components/requests";
+import Footer from "./netflix/Components/Footer";
 const Netflixapp = () => {
   return (
-    <div>
+    <div className="netflix__app">
       <Navbar />
       <Banner />
       <Row
@@ -25,6 +26,7 @@ const Netflixapp = () => {
         fetchUrl={requests.fetchRomanticMovies}
       />
       <Row RowTitle="LOL !" fetchUrl={requests.fetchComedyMovies} />
+      <Footer />
     </div>
   );
 };

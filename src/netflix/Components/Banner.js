@@ -41,7 +41,7 @@ const Banner = () => {
         </div>
         <div className="banner__description">
           {truncate(movie?.overview || "", 150)}
-          <i>( click on poster to watch trailer )</i>
+          <i> ( click on poster to watch trailer ) </i>
         </div>
       </div>
       <div className="banner__fadeeffect"></div>

@@ -24,3 +24,8 @@ code {
 img {
   width: 100%;
 }
+
+/* netflix */
+.netflix__app {
+  background-color: #111;
+}

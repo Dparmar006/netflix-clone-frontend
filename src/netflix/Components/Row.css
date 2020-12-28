@@ -18,6 +18,7 @@
   max-height: 320px;
   margin-right: 1.5em;
   transition: all 450ms;
+  cursor: pointer;
 }
 .row__largePoster {
   max-height: 18em;
@@ -28,17 +29,16 @@
 }
 
 .row__poster {
-  display: flex;
-  position: relative;
 }
 .poster__info {
-  opacity: 0;
+  /* opacity: 0; */
   z-index: 1;
   width: 90%;
-  color: #111;
-  position: absolute;
+  color: rgb(211, 197, 197);
+
   top: 1em;
   padding: 0.5em;
+  padding-left: 0em;
 }
 .poster__info-title {
   font-size: 0.9rem;
@@ -46,7 +46,7 @@
 .poster__info-overview {
   font-size: 0.8rem;
   margin-top: 0.5rem;
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   word-wrap: inherit;
 }
 .row__trailer {

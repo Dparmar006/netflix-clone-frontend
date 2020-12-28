@@ -66,9 +66,11 @@ const Row = ({ RowTitle, fetchUrl, isLargeRow }) => {
                   <h3 className="poster__info-title">
                     {movie?.original_name || movie?.name || movie?.title || ""}{" "}
                   </h3>
-                  <p className="poster__info-rating">{movie.vote_average}</p>
+                  <p className="poster__info-rating">
+                    {movie.vote_average} <span>/ 10</span>
+                  </p>
                   <p className="poster__info-overview">
-                    {truncate(movie.overview, 150)} <span>/ 10</span>
+                    {truncate(movie.overview, 150)}
                   </p>
                 </div>
               </p>
