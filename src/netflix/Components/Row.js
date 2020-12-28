@@ -46,7 +46,7 @@ const Row = ({ RowTitle, fetchUrl, isLargeRow }) => {
       <div className="row">
         <h2 className="row__title">{RowTitle} </h2>
 
-        {movies.length === 0 ? (
+        {movies.length == 0 ? (
           <RowLoading />
         ) : (
           <div className="row__posters">
