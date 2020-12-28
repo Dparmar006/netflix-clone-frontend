@@ -4,6 +4,7 @@ import axios from "./axios";
 import movieTrailer from "movie-trailer";
 
 import "./Row.css";
+import RowLoading from "./RowLoading";
 const Row = ({ RowTitle, fetchUrl, isLargeRow }) => {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
@@ -44,39 +45,47 @@ const Row = ({ RowTitle, fetchUrl, isLargeRow }) => {
     <div>
       <div className="row">
         <h2 className="row__title">{RowTitle} </h2>
-        <div className="row__posters">
-          {movies.map((movie) => (
-            <div className="row__poster">
-              <img
-                onClick={() => {
-                  handleClick(movie);
-                }}
-                className={`row__img ${isLargeRow ? "row__largePoster" : ""}`}
-                src={
-                  isLargeRow
-                    ? `${base_url}${movie.poster_path}`
-                    : `${base_url}${movie.backdrop_path}`
-                }
-                alt={movie.name}
-                key={movie.id}
-              />
-              <p>
-                {" "}
-                <div className="poster__info">
-                  <h3 className="poster__info-title">
-                    {movie?.original_name || movie?.name || movie?.title || ""}{" "}
-                  </h3>
-                  <p className="poster__info-rating">
-                    {movie.vote_average} <span>/ 10</span>
-                  </p>
-                  <p className="poster__info-overview">
-                    {truncate(movie.overview, 150)}
-                  </p>
-                </div>
-              </p>
-            </div>
-          ))}
-        </div>
+
+        {movies.length === 0 ? (
+          <RowLoading />
+        ) : (
+          <div className="row__posters">
+            {movies.map((movie) => (
+              <div className="row__poster">
+                <img
+                  onClick={() => {
+                    handleClick(movie);
+                  }}
+                  className={`row__img ${isLargeRow ? "row__largePoster" : ""}`}
+                  src={
+                    isLargeRow
+                      ? `${base_url}${movie.poster_path}`
+                      : `${base_url}${movie.backdrop_path}`
+                  }
+                  alt={movie.name}
+                  key={movie.id}
+                />
+                <p>
+                  {" "}
+                  <div className="poster__info">
+                    <h3 className="poster__info-title">
+                      {movie?.original_name ||
+                        movie?.name ||
+                        movie?.title ||
+                        ""}{" "}
+                    </h3>
+                    <p className="poster__info-rating">
+                      {movie.vote_average} <span>/ 10</span>
+                    </p>
+                    <p className="poster__info-overview">
+                      {truncate(movie.overview, 150)}
+                    </p>
+                  </div>
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="row__trailer">

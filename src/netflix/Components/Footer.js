@@ -4,8 +4,16 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__container">
-        <div className="footer__box">Whatsapp clone</div>
-        <div className="footer__box">Netflix clone</div>
+        <div className="footer__box">
+          <a className="app__link" href="netflix">
+            Netflix
+          </a>
+        </div>
+        <div className="footer__box">
+          <a className="app__link" href="whatsapp">
+            Whatsapp
+          </a>
+        </div>
       </div>
     </footer>
   );

@@ -5,6 +5,7 @@ import Row from "./netflix/Components/Row";
 
 import requests from "./netflix/Components/requests";
 import Footer from "./netflix/Components/Footer";
+
 const Netflixapp = () => {
   return (
     <div className="netflix__app">
@@ -22,7 +23,7 @@ const Netflixapp = () => {
 
       <Row RowTitle="Top notch !" fetchUrl={requests.fetchTopRated} />
       <Row
-        title="Find your bae first"
+        RowTitle="Find your bae first"
         fetchUrl={requests.fetchRomanticMovies}
       />
       <Row RowTitle="LOL !" fetchUrl={requests.fetchComedyMovies} />

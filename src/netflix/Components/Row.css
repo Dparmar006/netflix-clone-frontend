@@ -29,6 +29,7 @@
 }
 
 .row__poster {
+  max-height: 16em;
 }
 .poster__info {
   /* opacity: 0; */
