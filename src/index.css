@@ -13,9 +13,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.app {
-  background-color: #111;
-}
 body::-webkit-scrollbar {
   width: 7px;
 }

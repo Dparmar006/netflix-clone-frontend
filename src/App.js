@@ -1,11 +1,17 @@
 import "./App.css";
 
-import Netflix from "./Netflixapp";
-import requests from "./netflix/Components/requests";
 function App() {
   return (
     <div className="app">
-      <Netflix />
+      <div className="app__menu">
+        <a className="app__link" href="netflix">
+          Netflix
+        </a>
+
+        <a className="app__link" href="whatsapp">
+          Whatsapp
+        </a>
+      </div>
     </div>
   );
 }

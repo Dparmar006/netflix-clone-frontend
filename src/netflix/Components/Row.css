@@ -12,7 +12,7 @@
 .row__posters::-webkit-scrollbar {
   display: none;
 }
-.row__poster {
+.row__img {
   object-fit: contain;
   width: 12em;
   max-height: 320px;
@@ -22,11 +22,33 @@
 .row__largePoster {
   max-height: 18em;
 }
-.row__poster:hover {
+.row__img:hover {
   transform: scale(1.03);
   box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.3);
 }
 
+.row__poster {
+  display: flex;
+  position: relative;
+}
+.poster__info {
+  opacity: 0;
+  z-index: 1;
+  width: 90%;
+  color: #111;
+  position: absolute;
+  top: 1em;
+  padding: 0.5em;
+}
+.poster__info-title {
+  font-size: 0.9rem;
+}
+.poster__info-overview {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  word-wrap: inherit;
+}
 .row__trailer {
   z-index: 1;
   height: 40%;

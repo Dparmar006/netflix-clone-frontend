@@ -4,7 +4,7 @@ import axios from "./axios";
 import movieTrailer from "movie-trailer";
 
 import "./Row.css";
-const Row = ({ title, fetchUrl, isLargeRow }) => {
+const Row = ({ RowTitle, fetchUrl, isLargeRow }) => {
   const [movies, setMovies] = useState([]);
   const [trailerUrl, setTrailerUrl] = useState("");
 
@@ -23,7 +23,9 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
     height: "400",
     width: "100%",
   };
-
+  function truncate(str, n) {
+    return str.length > n ? str.substr(0, n - 1) + " ... " : str;
+  }
   const handleClick = (movie) => {
     if (trailerUrl) {
       setTrailerUrl("");
@@ -37,25 +39,40 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
         .catch((error) => console.error(error));
     }
   };
+  console.log(movies);
   return (
     <div>
       <div className="row">
-        <h2 className="row__title">{title} </h2>
+        <h2 className="row__title">{RowTitle} </h2>
         <div className="row__posters">
           {movies.map((movie) => (
-            <img
-              onClick={() => {
-                handleClick(movie);
-              }}
-              className={`row__poster ${isLargeRow ? "row__largePoster" : ""}`}
-              src={
-                isLargeRow
-                  ? `${base_url}${movie.poster_path}`
-                  : `${base_url}${movie.backdrop_path}`
-              }
-              alt={movie.name}
-              key={movie.id}
-            />
+            <div className="row__poster">
+              <img
+                onClick={() => {
+                  handleClick(movie);
+                }}
+                className={`row__img ${isLargeRow ? "row__largePoster" : ""}`}
+                src={
+                  isLargeRow
+                    ? `${base_url}${movie.poster_path}`
+                    : `${base_url}${movie.backdrop_path}`
+                }
+                alt={movie.name}
+                key={movie.id}
+              />
+              <p>
+                {" "}
+                <div className="poster__info">
+                  <h3 className="poster__info-title">
+                    {movie?.original_name || movie?.name || movie?.title || ""}{" "}
+                  </h3>
+                  <p className="poster__info-rating">{movie.vote_average}</p>
+                  <p className="poster__info-overview">
+                    {truncate(movie.overview, 150)} <span>/ 10</span>
+                  </p>
+                </div>
+              </p>
+            </div>
           ))}
         </div>
       </div>

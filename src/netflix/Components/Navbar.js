@@ -18,7 +18,10 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${show && "nav__black"} `}>
       <div className="logo">
-        <img src="https://1000logos.net/wp-content/uploads/2017/05/Netflix-Logo.png" />
+        <img
+          src="https://1000logos.net/wp-content/uploads/2017/05/Netflix-Logo.png"
+          alt="poster-big"
+        />
       </div>
       <ul className="menu">
         <li className="nav-item">
