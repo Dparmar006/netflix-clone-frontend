@@ -1,18 +1,31 @@
 import "./App.css";
-
+import Navbar from "./Components/Navbar";
+import Banner from "./Components/Banner";
+import Row from "./Components/Row";
+import Footer from "./Components/Footer";
+import requests from "./requests";
 function App() {
   return (
     <div className="app">
-      <h1>Choose a clone</h1>
-      <div className="app__menu">
-        <a className="app__link" href="netflix">
-          Netflix
-        </a>
+      <Navbar />
+      <Banner />
+      <Row
+        RowTitle="Get along with trends"
+        fetchUrl={requests.fetchTrending}
+        isLargeRow="true"
+      />
+      <Row
+        RowTitle="Netflix origionals"
+        fetchUrl={requests.fetchNetflixOrigianls}
+      />
 
-        <a className="app__link" href="whatsapp">
-          Whatsapp
-        </a>
-      </div>
+      <Row RowTitle="Top notch !" fetchUrl={requests.fetchTopRated} />
+      <Row
+        RowTitle="Find your bae first"
+        fetchUrl={requests.fetchRomanticMovies}
+      />
+      <Row RowTitle="LOL !" fetchUrl={requests.fetchComedyMovies} />
+      <Footer />
     </div>
   );
 }

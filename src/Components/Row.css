@@ -8,6 +8,7 @@
   overflow-x: scroll;
   scroll-behavior: smooth;
   padding: 1em;
+  max-width: 100%;
 }
 .row__posters::-webkit-scrollbar {
   display: none;
