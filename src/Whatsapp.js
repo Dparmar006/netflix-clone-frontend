@@ -7,13 +7,15 @@ const Whatsapp = () => {
     <div className="whatsapp__app">
       <HeaderWp />
       <TileWp />
+      <TileWp msgStatus="fa fa-check-circle" />
+      <TileWp msgStatus="fa fa-check-circle" />
       <TileWp />
       <TileWp />
       <TileWp />
-      <TileWp />
-      <TileWp />
-      <TileWp />
-      <TileWp />
+      <TileWp msgStatus="fa fa-check-circle" />
+      <TileWp msgStatus="fa fa-check-circle" />
+      <TileWp msgStatus="fa fa-check-circle" />
+      <TileWp msgStatus="fa fa-check-circle" />
     </div>
   );
 };

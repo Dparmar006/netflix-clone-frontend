@@ -8,7 +8,10 @@
 
 .title-wp {
   color: #ddd;
-  font-style: 0.9rem;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  align-self: center;
 }
 
 .icon-button-wp {
