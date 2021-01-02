@@ -1,4 +1,4 @@
-# React clones
-## Trying to make clones of populer websites with react for learning puposes and real time data by using various APIs
+# Netflix clone
+## A netflix clone that has shining card loading with an ABILITY TO PLAY TRAILERS from youtube.
 
-1. Netflix
+
